@@ -1,0 +1,96 @@
+{
+  "random_seed": 42,
+  "eval_targets": 10,
+  "thresholds": {
+    "5": {
+      "validation": {
+        "recall_10": 0.123,
+        "ndcg_10": 0.1173
+      },
+      "warm": {
+        "recall_10": 0.0498,
+        "ndcg_10": 0.049
+      },
+      "cold": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "routing": {
+        "two_tower_users": 728,
+        "two_tower_pct": 88.56,
+        "content_users": 0,
+        "content_pct": 0.0,
+        "popularity_users": 94,
+        "popularity_pct": 11.44
+      }
+    },
+    "10": {
+      "validation": {
+        "recall_10": 0.123,
+        "ndcg_10": 0.1173
+      },
+      "warm": {
+        "recall_10": 0.0498,
+        "ndcg_10": 0.049
+      },
+      "cold": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "routing": {
+        "two_tower_users": 728,
+        "two_tower_pct": 88.56,
+        "content_users": 0,
+        "content_pct": 0.0,
+        "popularity_users": 94,
+        "popularity_pct": 11.44
+      }
+    },
+    "20": {
+      "validation": {
+        "recall_10": 0.0871,
+        "ndcg_10": 0.0877
+      },
+      "warm": {
+        "recall_10": 0.0498,
+        "ndcg_10": 0.049
+      },
+      "cold": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "routing": {
+        "two_tower_users": 728,
+        "two_tower_pct": 88.56,
+        "content_users": 0,
+        "content_pct": 0.0,
+        "popularity_users": 94,
+        "popularity_pct": 11.44
+      }
+    },
+    "30": {
+      "validation": {
+        "recall_10": 0.0704,
+        "ndcg_10": 0.0729
+      },
+      "warm": {
+        "recall_10": 0.0498,
+        "ndcg_10": 0.049
+      },
+      "cold": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "routing": {
+        "two_tower_users": 596,
+        "two_tower_pct": 72.51,
+        "content_users": 132,
+        "content_pct": 16.06,
+        "popularity_users": 94,
+        "popularity_pct": 11.44
+      }
+    }
+  },
+  "selected_threshold_N": 10,
+  "selection_rationale": "Selected N=10 strictly based on train-only validation metrics. Validation Recall@10 is highest at 0.1230 for N=5,10 and drops significantly to 0.0871 (N=20) and 0.0704 (N=30) due to premature content fallback. N=5 and N=10 are tied on validation performance; N=10 is selected as the most defensible threshold providing a safety margin over sparse single-digit histories."
+}
