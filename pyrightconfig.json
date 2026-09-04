@@ -1,0 +1,30 @@
+{
+  "venvPath": ".",
+  "venv": ".venv",
+  "pythonVersion": "3.11",
+  "pythonPlatform": "Windows",
+  "typeCheckingMode": "basic",
+
+  "include": [
+    "app",
+    "src",
+    "models",
+    "tests",
+    "scripts"
+  ],
+
+  "exclude": [
+    ".venv",
+    "__pycache__",
+    ".pytest_cache",
+    "artifacts",
+    "data/raw"
+  ],
+
+  "extraPaths": [
+    "."
+  ],
+
+  "reportMissingImports": "warning",
+  "reportMissingModuleSource": "none"
+}
