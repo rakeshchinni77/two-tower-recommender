@@ -241,7 +241,7 @@ two-tower-recommender/
 
 ### 1. Clone the Repository
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/rakeshchinni77/two-tower-recommender
 cd two-tower-recommender
 ```
 
