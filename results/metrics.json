@@ -1,0 +1,41 @@
+{
+  "threshold_N": 10,
+  "slices": {
+    "warm_users": {
+      "popularity": {
+        "recall_10": 0.0551,
+        "ndcg_10": 0.0575
+      },
+      "content": {
+        "recall_10": 0.0123,
+        "ndcg_10": 0.0117
+      },
+      "two_tower": {
+        "recall_10": 0.0497,
+        "ndcg_10": 0.0493
+      },
+      "hybrid": {
+        "recall_10": 0.0498,
+        "ndcg_10": 0.049
+      }
+    },
+    "cold_users": {
+      "popularity": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "content": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "two_tower": {
+        "recall_10": 0.0245,
+        "ndcg_10": 0.0336
+      },
+      "hybrid": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      }
+    }
+  }
+}

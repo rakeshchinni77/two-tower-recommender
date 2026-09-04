@@ -1,0 +1,70 @@
+{
+  "phase": "Phase 8 Final Evaluation — Two-Tower MovieLens 100K Recommender",
+  "random_seed": 42,
+  "eval_targets_per_user": 10,
+  "threshold_N": 10,
+  "dataset": "MovieLens 100K",
+  "total_interactions": 100000,
+  "split_summary": {
+    "train_interactions": 89275,
+    "warm_test_interactions": 7325,
+    "cold_test_interactions": 3400,
+    "warm_users": 728,
+    "cold_users": 94
+  },
+  "protocol": {
+    "leakage_prevention": "strict",
+    "cold_users_in_train": false,
+    "warm_test_items_excluded_from_train": true,
+    "threshold_selection": "train-only validation, deterministic seed=42"
+  },
+  "slices": {
+    "warm_users": {
+      "popularity": {
+        "recall_10": 0.0551,
+        "ndcg_10": 0.0575
+      },
+      "content": {
+        "recall_10": 0.0123,
+        "ndcg_10": 0.0117
+      },
+      "two_tower": {
+        "recall_10": 0.0497,
+        "ndcg_10": 0.0493
+      },
+      "hybrid": {
+        "recall_10": 0.0498,
+        "ndcg_10": 0.049
+      }
+    },
+    "cold_users": {
+      "popularity": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "content": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      },
+      "two_tower": {
+        "recall_10": 0.0245,
+        "ndcg_10": 0.0336
+      },
+      "hybrid": {
+        "recall_10": 0.0787,
+        "ndcg_10": 0.0751
+      }
+    }
+  },
+  "gate_checks": {
+    "cold_two_tower_recall_lt_warm_two_tower_recall": true,
+    "cold_hybrid_recall_gt_cold_two_tower_recall": true,
+    "condition_detail": {
+      "warm_two_tower_recall_10": 0.0497,
+      "cold_two_tower_recall_10": 0.0245,
+      "cold_hybrid_recall_10": 0.0787
+    }
+  },
+  "selected_threshold_N": 10,
+  "threshold_selection_rationale": "N=10 selected via train-only validation sweep over [5, 10, 20, 30]. Recall@10 is highest at 0.1230 for N=5 and N=10; N=10 selected as it provides a safety buffer over sparse single-digit history users while maintaining equivalent validation performance."
+}
