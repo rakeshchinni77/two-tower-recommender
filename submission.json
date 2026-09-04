@@ -1,0 +1,5 @@
+{
+  "threshold_N": 10,
+  "embedding_dim": 64,
+  "batch_size": 256
+}
